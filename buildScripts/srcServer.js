@@ -25,6 +25,16 @@ app.get('/', function(req, res){
 
 });
 
+// Fake Production API
+app.get('/users', function(req, res){
+	// hard coding for simplicity. pretend this hits a real database
+	res.json([
+		{"id": 1,"firstName":"Bob","lastName":"Smith","email":"bob@gmail.com"},
+		{"id": 2,"firstName":"Tammy","lastName":"Norton","email":"tnorton@gmail.com"},
+		{"id": 3,"firstName":"Tina","lastName":"Lee","email":"lee.tina@gmail.com"}
+	]);
+});
+
 /**
  * Sets Express to listen on port specified. Includes error handling
  */
